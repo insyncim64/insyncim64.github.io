@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Education from '../components/Education.astro';
+import Skills from '../components/Skills.astro';
+import Publications from '../components/Publications.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout
+  title="Jibin Ou | System Architect — Automotive Platforms & Agentic AI"
+  description="Personal portfolio of Jibin Ou: System Architect at Volvo Group specializing in vehicle energy management, central compute platforms, AUTOSAR, and agentic AI diagnostic workflows."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <Experience />
+    <Projects />
+    <Education />
+    <Skills />
+    <Publications />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

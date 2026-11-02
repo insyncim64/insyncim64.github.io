@@ -1,0 +1,42 @@
+---
+import LinkedinIcon from './icons/LinkedinIcon.astro';
+---
+
+<footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <div class="w-7 h-7 rounded-lg bg-sky-600 text-white flex items-center justify-center font-bold text-xs">
+        JO
+      </div>
+      <div>
+        <p class="text-white font-semibold text-sm">Jibin Ou</p>
+        <p class="text-xs text-slate-400">System Architect · Gothenburg, Sweden</p>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+      <a href="#about" class="hover:text-white transition-colors">About</a>
+      <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+      <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+      <a href="#education" class="hover:text-white transition-colors">Education</a>
+      <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+      <a href="#publications" class="hover:text-white transition-colors">Publications</a>
+      <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+    </div>
+
+    <!-- Social & Copyright -->
+    <div class="flex items-center gap-4 text-xs">
+      <a
+        href="https://de.linkedin.com/in/jibin-ou-830a5421"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        class="text-slate-400 hover:text-white transition-colors"
+      >
+        <LinkedinIcon class="w-4 h-4" />
+      </a>
+      <span>© {new Date().getFullYear()} Jibin Ou</span>
+    </div>
+  </div>
+</footer>

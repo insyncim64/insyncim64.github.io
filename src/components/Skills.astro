@@ -1,0 +1,110 @@
+---
+import { Cpu, Terminal, ShieldCheck, Languages } from '@lucide/astro';
+
+const skillCategories = [
+  {
+    title: "Systems & Architecture",
+    icon: Cpu,
+    skills: [
+      "System Architecture",
+      "Automotive Systems",
+      "ADAS / AD",
+      "Central Compute Platform",
+      "Digital Map & Geospatial Services",
+      "SOME/IP",
+      "AUTOSAR (Adaptive & Classic)",
+      "POSIX",
+      "Signal Databases (CAN/Ethernet)",
+      "Service-Oriented Architecture (SOA)"
+    ]
+  },
+  {
+    title: "AI & Software Engineering",
+    icon: Terminal,
+    skills: [
+      "Agentic AI Workflows",
+      "LLM Context & Prompt Engineering",
+      "Python",
+      "C / C++",
+      "Java",
+      "Matlab",
+      "Linux",
+      "Git",
+      "Distributed Middleware"
+    ]
+  },
+  {
+    title: "Methods, Verification & Coursework",
+    icon: ShieldCheck,
+    skills: [
+      "Requirements Engineering",
+      "Automated Fault Investigation",
+      "CI / CD",
+      "LaTeX",
+      "Machine Learning",
+      "Human Computer Interaction"
+    ]
+  }
+];
+
+const languageList = [
+  { lang: "English", level: "Professional Proficiency" },
+  { lang: "Swedish", level: "Advanced" },
+  { lang: "German", level: "Advanced" },
+  { lang: "Chinese", level: "Mother Tongue" },
+  { lang: "Cantonese", level: "Mother Tongue" }
+];
+---
+
+<section id="skills" class="py-20 bg-white border-y border-slate-200/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-14">
+      <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">
+        Expertise & Tooling
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">
+        Skills & Core Competencies
+      </h2>
+      <p class="text-slate-600 text-base mt-2">
+        A comprehensive overview of architectural specializations, engineering languages, and spoken languages.
+      </p>
+    </div>
+
+    <!-- Technical Skill Categories -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      {skillCategories.map((cat) => (
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:border-slate-300 transition-colors flex flex-col">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-white border border-slate-200 text-sky-600 flex items-center justify-center shadow-xs">
+              <cat.icon class="w-5 h-5" />
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">{cat.title}</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {cat.skills.map((s) => (
+              <span class="text-xs px-3 py-1.5 rounded-lg bg-white text-slate-800 font-medium border border-slate-200 shadow-2xs">
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Spoken Languages -->
+    <div class="p-6 rounded-2xl bg-sky-50/50 border border-sky-100">
+      <div class="flex items-center gap-2 mb-4">
+        <Languages class="w-5 h-5 text-sky-600" />
+        <h3 class="font-bold text-slate-900 text-base">Spoken Languages</h3>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        {languageList.map((item) => (
+          <div class="bg-white p-3 rounded-xl border border-sky-100 text-center shadow-2xs">
+            <p class="font-bold text-slate-900 text-sm">{item.lang}</p>
+            <p class="text-xs text-slate-500 mt-0.5">{item.level}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

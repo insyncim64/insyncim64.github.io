@@ -1,0 +1,30 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Jibin Ou | System Architect",
+  description = "Personal website and portfolio of Jibin Ou - System Architect specializing in Automotive Systems, ADAS/AD, and Agentic AI Workflows."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth bg-slate-50 text-slate-800 antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://insyncim64.github.io" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-sky-500 selection:text-white">
+    <slot />
+  </body>
+</html>

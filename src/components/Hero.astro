@@ -1,0 +1,81 @@
+---
+import { FileDown, Mail, MapPin, ChevronDown } from '@lucide/astro';
+import LinkedinIcon from './icons/LinkedinIcon.astro';
+---
+
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+  <!-- Background Image with Light/Clean Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/intro-bg.jpg"
+      alt="Santorini Scenic View"
+      class="w-full h-full object-cover object-center filter saturate-75"
+    />
+    <!-- Multi-layer gradient overlay for high text legibility while preserving the beautiful scenery -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-slate-50/95"></div>
+    <div class="absolute inset-0 bg-white/30 backdrop-blur-[2px]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-20 text-center flex flex-col items-center">
+    <!-- Status / Location Badge -->
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 border border-slate-200 text-slate-700 text-xs sm:text-sm font-medium shadow-sm mb-6 backdrop-blur">
+      <MapPin class="w-4 h-4 text-sky-600" />
+      <span>Gothenburg, Sweden</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+      <span class="text-slate-500">Volvo Group</span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
+      Jibin Ou
+    </h1>
+    
+    <!-- Subtitle / Headline -->
+    <p class="text-xl sm:text-2xl font-semibold text-sky-700 mb-6 max-w-2xl">
+      System Architect · Automotive Platforms & Agentic AI
+    </p>
+
+    <!-- Bio Summary -->
+    <p class="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed mb-8">
+      Leading end-to-end vehicle software architecture, POSIX & AUTOSAR platforms, digital map & geospatial services, and pioneer in AI-driven agentic engineering workflows.
+    </p>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/jibin_ou_cv_en.pdf"
+        target="_blank"
+        download
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-medium text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+      >
+        <FileDown class="w-4 h-4" />
+        <span>Download CV (PDF)</span>
+      </a>
+
+      <a
+        href="https://de.linkedin.com/in/jibin-ou-830a5421"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-medium text-sm border border-slate-300 transition-all shadow-sm hover:shadow transform hover:-translate-y-0.5"
+      >
+        <LinkedinIcon class="w-4 h-4 text-[#0077b5]" />
+        <span>LinkedIn Profile</span>
+      </a>
+
+      <a
+        href="mailto:jibin.ou@outlook.com"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-medium text-sm border border-slate-300 transition-all shadow-sm hover:shadow transform hover:-translate-y-0.5"
+      >
+        <Mail class="w-4 h-4 text-slate-600" />
+        <span>Get in Touch</span>
+      </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="mt-12 text-slate-400 animate-bounce">
+      <a href="#about" aria-label="Scroll to about section">
+        <ChevronDown class="w-6 h-6" />
+      </a>
+    </div>
+  </div>
+</section>

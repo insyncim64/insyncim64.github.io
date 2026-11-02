@@ -1,0 +1,137 @@
+---
+import { Sparkles, Cpu, Layers, Navigation, ArrowUpRight } from '@lucide/astro';
+
+const projects = [
+  {
+    title: "Agentic AI Workflow for Automated Issue & Fault Investigation",
+    tagline: "Intelligent diagnostic & analysis workflow for complex vehicle software defects",
+    org: "Volvo Group",
+    icon: Sparkles,
+    badge: "Agentic AI & LLM",
+    bullets: [
+      "Designed multi-agent LLM systems to autonomously parse vehicle issue reports, trace multi-repository source code, and analyze target system execution logs.",
+      "Implemented multi-stage reasoning chains for hypothesis generation, root-cause evidence extraction, and automated regression test synthesis.",
+      "Established closed-loop evaluation frameworks using historical failure cases and evidence validation gates to ensure rigor, explainability, and traceability."
+    ],
+    tags: ["Agentic AI", "LLM Workflows", "Automated Root-Cause Analysis", "Python", "CI/CD"]
+  },
+  {
+    title: "Vehicle Energy Efficiency & Guidance System Architecture",
+    tagline: "End-to-end realization of vehicle energy management and driver guidance functions",
+    org: "Volvo Group",
+    icon: Cpu,
+    badge: "Energy & Guidance",
+    bullets: [
+      "Architected full-stack vehicle energy management solution across adapter layers, dynamic configuration, real-time scoring, and user notifications.",
+      "Established cross-environment test framework spanning Adaptive and Classic AUTOSAR and Linux platforms via SOME/IP services, utilizing Python."
+    ],
+    tags: ["Adaptive AUTOSAR", "Classic AUTOSAR", "Linux", "SOME/IP", "Energy Management"]
+  },
+  {
+    title: "Central Compute Platform Interface & Signal Architecture",
+    tagline: "Platform architecture, signal database allocation, and service integration",
+    org: "Volvo Cars",
+    icon: Layers,
+    badge: "Platform & Signals",
+    bullets: [
+      "Managed end-to-end signal database allocation and service interfaces, transitioning legacy point-to-point signals into modular, service-oriented architectures (SOA).",
+      "Optimized signal aggregation rates, serialization overhead, and thread scheduling to satisfy strict latency, throughput, and data integrity constraints."
+    ],
+    tags: ["Central Compute", "SOA", "Signal Databases", "CAN / Ethernet", "POSIX"]
+  },
+  {
+    title: "Vehicle Map & Geolocation Information Subsystem",
+    tagline: "Digital map and geospatial data distribution for active safety and driver assistance",
+    org: "Volvo Cars",
+    icon: Navigation,
+    badge: "Geospatial & ADAS",
+    bullets: [
+      "Designed onboard map service pipeline delivering road network geometry, curvature, and topological attributes to active safety applications.",
+      "Standardized client query APIs, path reconstruction models, and vehicle caching strategies with Google Android Automotive OS and vehicle compute nodes."
+    ],
+    tags: ["Digital Maps", "ADAS / AD", "Android Automotive OS", "Geospatial Services"]
+  }
+];
+
+const priorProjectsConcise = [
+  { name: "Real Estate Transaction Dashboard", date: "2016", context: "Independent Web App" },
+  { name: "Interactive Heap Memory Visualization", date: "2013–2014", context: "Master Thesis at ETH Zürich" },
+  { name: "WeAnnotate Collaborative PDF Annotation", date: "2012", context: "RWTH Aachen" },
+  { name: "Location-Based Mobile & Mixed-Reality Games", date: "2011–2012", context: "Fraunhofer FIT" }
+];
+---
+
+<section id="projects" class="py-20 bg-white border-y border-slate-200/80">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-14">
+      <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">
+        Selected Works
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">
+        Featured Projects
+      </h2>
+      <p class="text-slate-600 text-base mt-2">
+        Key architectural initiatives spanning agentic AI systems, central compute platforms, and automotive vehicle functions.
+      </p>
+    </div>
+
+    <!-- 4 Main CV Projects -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map((proj) => (
+        <div class="rounded-2xl border border-slate-200/90 bg-white p-7 shadow-xs hover:shadow-lg hover:border-sky-300 transition-all duration-200 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-3 mb-4">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-50 text-sky-700 border border-sky-100">
+                <proj.icon class="w-3.5 h-3.5" />
+                {proj.badge}
+              </span>
+              <span class="text-xs font-medium text-slate-500">{proj.org}</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 tracking-tight mb-2 group-hover:text-sky-600 transition-colors">
+              {proj.title}
+            </h3>
+
+            <p class="text-xs sm:text-sm font-medium text-slate-500 italic mb-4">
+              {proj.tagline}
+            </p>
+
+            <ul class="space-y-2.5 text-sm text-slate-700 leading-relaxed mb-6">
+              {proj.bullets.map((b) => (
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sky-500 mt-2 shrink-0"></span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100">
+            {proj.tags.map((t) => (
+              <span class="text-xs px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Prior Projects (Concise level as requested) -->
+    <div class="mt-14 p-6 rounded-2xl bg-slate-50 border border-slate-200/80">
+      <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+        Earlier Research & Development Projects (Concise)
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {priorProjectsConcise.map((item) => (
+          <div class="p-3 bg-white rounded-xl border border-slate-200/60 shadow-2xs">
+            <p class="font-semibold text-slate-900 text-xs">{item.name}</p>
+            <p class="text-xs text-slate-500 mt-0.5">{item.context}</p>
+            <span class="inline-block text-[11px] font-medium text-sky-600 mt-1">{item.date}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

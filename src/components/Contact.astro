@@ -1,0 +1,84 @@
+---
+import { Mail, MapPin, FileDown } from '@lucide/astro';
+import LinkedinIcon from './icons/LinkedinIcon.astro';
+---
+
+<section id="contact" class="py-20 bg-white border-t border-slate-200/80">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">
+      Get in Touch
+    </span>
+    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">
+      Let's Connect
+    </h2>
+    <p class="text-slate-600 text-base sm:text-lg mt-3 max-w-xl mx-auto">
+      Feel free to reach out for architectural consultations, technical discussions on automotive systems and agentic AI, or professional opportunities.
+    </p>
+
+    <!-- Contact Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10 text-left">
+      <!-- Email -->
+      <a
+        href="mailto:jibin.ou@outlook.com"
+        class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-sky-300 hover:bg-sky-50/30 transition-all group"
+      >
+        <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-sky-600 mb-3 group-hover:scale-110 transition-transform shadow-2xs">
+          <Mail class="w-5 h-5" />
+        </div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Email</p>
+        <p class="text-sm font-semibold text-slate-900 mt-1 truncate">jibin.ou@outlook.com</p>
+      </a>
+
+      <!-- LinkedIn -->
+      <a
+        href="https://de.linkedin.com/in/jibin-ou-830a5421"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-sky-300 hover:bg-sky-50/30 transition-all group"
+      >
+        <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#0077b5] mb-3 group-hover:scale-110 transition-transform shadow-2xs">
+          <LinkedinIcon class="w-5 h-5" />
+        </div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">LinkedIn</p>
+        <p class="text-sm font-semibold text-slate-900 mt-1">in/jibin-ou-830a5421</p>
+      </a>
+
+      <!-- Location -->
+      <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80">
+        <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-700 mb-3 shadow-2xs">
+          <MapPin class="w-5 h-5" />
+        </div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Location</p>
+        <p class="text-sm font-semibold text-slate-900 mt-1">Gothenburg, Sweden</p>
+      </div>
+    </div>
+
+    <!-- CV Download Link Banner -->
+    <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-sky-50 via-slate-50 to-sky-50 border border-sky-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-left">
+        <p class="font-bold text-slate-900 text-sm">Looking for the complete resume?</p>
+        <p class="text-xs text-slate-600 mt-0.5">Download the latest English or Chinese version.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <a
+          href="/jibin_ou_cv_en.pdf"
+          target="_blank"
+          download
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-medium text-xs shadow-sm transition-all"
+        >
+          <FileDown class="w-4 h-4" />
+          <span>English CV (PDF)</span>
+        </a>
+        <a
+          href="/jibin_ou_cv_cn.pdf"
+          target="_blank"
+          download
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-medium text-xs shadow-xs transition-all"
+        >
+          <FileDown class="w-4 h-4" />
+          <span>Chinese CV (PDF)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

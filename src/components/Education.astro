@@ -1,0 +1,105 @@
+---
+import { GraduationCap, MapPin, Calendar, Award } from '@lucide/astro';
+
+const degrees = [
+  {
+    degree: "M.Sc., Media Informatics",
+    school: "RWTH Aachen",
+    location: "Aachen, Germany",
+    period: "Oct. 2010 – Apr. 2014",
+    highlight: "Focus on Human-Computer Interaction, Machine Learning, and Distributed Systems."
+  },
+  {
+    degree: "Visiting Student, Computer Science",
+    school: "ETH Zürich",
+    location: "Zürich, Switzerland",
+    period: "Jul. 2013 – Apr. 2014",
+    highlight: "HCI & Software Reliability Labs. Research led to CHI 2015 publication. Recipient of IDEA League Student Research Scholarship."
+  },
+  {
+    degree: "B.Sc., Information and Computational Science",
+    school: "Sun Yat-sen University",
+    location: "Guangzhou, China",
+    period: "Sept. 2006 – Jun. 2010",
+    highlight: "Foundation in mathematics, algorithms, scientific computing, and computer systems."
+  }
+];
+
+const awards = [
+  {
+    title: "Bravo Gold Recognition",
+    org: "Honeywell, Shanghai",
+    date: "Nov. 2016 & Jul. 2017",
+    desc: "Awarded twice for high-impact contributions to IoT platform client apps and cloud infrastructure."
+  },
+  {
+    title: "IDEA League Student Research Scholarship",
+    org: "IDEA League, Zürich",
+    date: "2013",
+    desc: "Competitive scholarship supporting research visit and collaborative work at ETH Zürich."
+  }
+];
+---
+
+<section id="education" class="py-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-14">
+      <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">
+        Academic Foundation
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">
+        Education & Honors
+      </h2>
+      <p class="text-slate-600 text-base mt-2">
+        International educational background from leading institutions in Germany, Switzerland, and China.
+      </p>
+    </div>
+
+    <!-- Education Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      {degrees.map((item) => (
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-4">
+              <GraduationCap class="w-5 h-5" />
+            </div>
+            <h3 class="font-bold text-slate-900 text-base leading-snug">{item.degree}</h3>
+            <p class="text-sm font-semibold text-sky-700 mt-1">{item.school}</p>
+            <div class="flex items-center gap-3 text-xs text-slate-500 mt-2">
+              <span class="flex items-center gap-1">
+                <MapPin class="w-3.5 h-3.5" />
+                {item.location}
+              </span>
+              <span>·</span>
+              <span class="flex items-center gap-1">
+                <Calendar class="w-3.5 h-3.5" />
+                {item.period}
+              </span>
+            </div>
+            <p class="text-xs text-slate-600 mt-4 leading-relaxed">{item.highlight}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Honors & Awards Sub-section -->
+    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm">
+      <div class="flex items-center gap-2 mb-6">
+        <Award class="w-5 h-5 text-amber-500" />
+        <h3 class="text-lg font-bold text-slate-900">Honors & Awards</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {awards.map((award) => (
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/60">
+            <div class="flex items-baseline justify-between gap-2">
+              <h4 class="font-bold text-slate-900 text-sm">{award.title}</h4>
+              <span class="text-xs font-semibold text-sky-600 shrink-0">{award.date}</span>
+            </div>
+            <p class="text-xs font-medium text-slate-500 mt-0.5">{award.org}</p>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">{award.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
